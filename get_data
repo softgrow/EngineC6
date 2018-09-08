@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Would be better to get in a compressed format
+# This is Map 84 - sample page 
+if [ ! -f bbox.xml ]
+  then
+    # Map 84 - sample page
+    #wget --output-document=bbox.xml https://overpass-api.de/api/map?bbox=139.130,-35.592,139.344,-35.319
+    # All of SA -40 south is nominal
+    wget --output-document=bbox.xml https://overpass-api.de/api/map?bbox=129,-40,141,-26
+fi
+if [ ! -d mkgmap-r4240 ]
+  then 
+    wget --output-document=mkgmap-r4240.zip http://www.mkgmap.org.uk/download/mkgmap-r4240.zip
+    unzip mkgmap-r4240
+    rm mkgmap-r4240.zip
+fi
+# Get the bounds file that mkgmap prefers, probably would like to remove this dependency
+if [ ! -f bounds.zip ]
+  then
+    wget --output-document=bounds.zip http://osm2.pleiades.uni-wuppertal.de/bounds/latest/bounds.zip
+fi
+mkdir scratch
+java -jar mkgmap-r4240/mkgmap.jar \
+    --route \
+    --add-pois-to-areas \
+    --bounds=bounds.zip \
+    --index \
+    --gmapsupp \
+    --output-dir=scratch \
+    bbox.xml
