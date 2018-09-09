@@ -20,7 +20,12 @@ if [ ! -f bounds.zip ]
   then
     wget --output-document=bounds.zip http://osm2.pleiades.uni-wuppertal.de/bounds/latest/bounds.zip
 fi
-mkdir scratch
+cp -r mkgmap-r4240/examples/styles/default cfs_style
+patch -p1 < cfs2.patch
+if [ ! -d scratch ]
+  then
+    mkdir scratch
+fi
 java -jar mkgmap-r4240/mkgmap.jar \
     --route \
     --add-pois-to-areas \
@@ -28,4 +33,5 @@ java -jar mkgmap-r4240/mkgmap.jar \
     --index \
     --gmapsupp \
     --output-dir=scratch \
-    bbox.xml
+    --style-file=cfs_style \
+    --input-file=bbox.xml --input-file=Water.osm

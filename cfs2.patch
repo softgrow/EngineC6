@@ -1,0 +1,11 @@
+diff -u mkgmap-r4240/examples/styles/default/points cfs_style/points
+--- orig/cfs_style/points	2018-09-01 12:33:52.000000000 +0930
++++ new/cfs_style/points	2018-09-09 09:33:43.000000000 +0930
+@@ -127,6 +127,7 @@
+ amenity=fast_food & cuisine ~ '.*pizza.*' [0x2a0a resolution 24]
+ amenity=fast_food [0x2a07 resolution 24]
+ amenity=fire_station [0x3008 resolution 24]
++emergency=ambulance_station { set name='${name|def:} (Ambulance)' } [0x3008 resolution 24]
+ amenity=food_court [0x2a13 resolution 24]
+ amenity=fuel & fuel:HGV_diesel=yes [ 0x2f16 resolution 23]
+ amenity=fuel & shop=convenience [ 0x2e06 resolution 24]

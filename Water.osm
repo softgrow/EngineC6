@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-39032' action='modify' visible='true' lat='-34.92219095668' lon='138.58730703324'>
+    <tag k='addr:city' v='Adelaide' />
+    <tag k='addr:country' v='AU' />
+    <tag k='addr:housename' v='1' />
+    <tag k='addr:postcode' v='5000' />
+    <tag k='addr:street' v='West Terrace' />
+    <tag k='amenity' v='restaurant' />
+    <tag k='cuisine' v='american' />
+    <tag k='name' v='Water Point NW' />
+    <tag k='phone' v='+61 8 8123 4567' />
+  </node>
+  <node id='-39051' action='modify' visible='true' lat='-34.93484431057' lon='138.60171316981'>
+    <tag k='addr:city' v='Adelaide' />
+    <tag k='addr:country' v='AU' />
+    <tag k='addr:housename' v='1' />
+    <tag k='addr:postcode' v='5000' />
+    <tag k='addr:street' v='Symonds Place' />
+    <tag k='amenity' v='restaurant' />
+    <tag k='cuisine' v='american' />
+    <tag k='name' v='Water Point South' />
+    <tag k='phone' v='+61 8 8456 7890' />
+  </node>
+</osm>
